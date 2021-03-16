@@ -34,3 +34,6 @@ The Makefile is responsible for running tests:
 ```bash
 $ make test
 ```
+
+### Reference
+Git repo: https://github.com/TrueLayer/data-api-quickstart-sample
