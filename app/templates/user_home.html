@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Main page</title>
+    </head>
+    <body>
+        <div>Access token expiration: {{client_data_token.lifetime}}<div><br>
+        <a href="/refresh_token"><input type="button" value="Refresh Token"></a> : Refresh the current token
+
+        <hr>
+        
+        <h4>Provider details</h4>
+        <div>Name: {{client_data_provider.providername}}</div>
+        <div>ID: {{client_data_provider.providerid}}</div>
+
+        <hr>
+
+        <h4>Accounts:</h4>
+        <ul>
+            {% for acc in accounts %}
+            <li id="{{acc.account_id}}">Account name: {{acc.display_name}}<br/>Account ID: {{acc.account_id}}<br/>
+                <a href="{{ url_for('show_transactions', accountId=acc.account_id) }}">Show Transactions</a> </li>
+            <br/>
+            {% endfor %}
+        </ul>
+
+        <hr>
+
+        <h4>Logout</h4>
+        <div>Click here to connect to a new bank account <a href="{{ url_for('sign_in') }}">here</a></div>
+
+        <hr>
+   
+    </body>
+</html>
